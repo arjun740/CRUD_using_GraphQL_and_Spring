@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: graphql
+server:
+  port: 8081

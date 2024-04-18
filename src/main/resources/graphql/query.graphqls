@@ -1,0 +1,32 @@
+type Student {
+    id : Int!
+    name : String
+    group : Group
+    age : Int
+    phoneNumber : String
+}
+input StudentInput {
+    id: Int!
+    name: String
+    groupId: Group
+    age: Int
+    phoneNumber: String
+}
+enum Group {
+    I_GROUP
+    II_GROUP
+    III_GROUP
+    IV_GROUP
+    V_GROUP
+}
+
+type Query {
+    findOne(id : Int!) : Student
+    findAllStudent : [Student]
+}
+
+type Mutation {
+    createStudentDetail(name:String, age:Int, group:Group, phoneNumber: String) : Student
+    updateStudentDetail(student:StudentInput!) : String
+    deleteStudentDetail(id:Int!) :String
+}
